@@ -3,6 +3,7 @@
 /**
  * print_times_table - printing the n times table, starting woth 0
  * @n: number of the time table
+ * Return: returns nothing
  */
 
 void print_times_table(int n)
@@ -38,7 +39,7 @@ void print_times_table(int n)
 					_putchar(',');
 					_putchar(' ');
 					_putchar((k / 100) + '0');
-					_putchar((k / 10) % '0');
+					_putchar(((k / 10) % 10) + '0');
 					_putchar((k % 10) + '0');
 				}
 			}
