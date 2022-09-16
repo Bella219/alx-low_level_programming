@@ -10,14 +10,14 @@
 int main(void)
 {
 	long number = 612852475143;
-	int c;
+	int inc;
 
 	while (inc++ < number / 2)
 	{
 		if (number % inc == 0)
 		{
 			number /= 2;
-			continue
+			continue;
 		}
 
 		for (inc = 3; inc < number / 2; inc += 2)
@@ -27,6 +27,6 @@ int main(void)
 		}
 
 	}
-	printf("%1d\n", number);
+	printf("%ld\n", number);
 	return (0);
 }
