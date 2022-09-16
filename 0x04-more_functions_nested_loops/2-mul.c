@@ -2,16 +2,12 @@
 
 /**
  * mul - multiplies two numbers
- * @c: tested character
- * Return: 1 if it is, 0 otherwise
+ * @a: first number
+ * @b: second number
+ * Return: returns result
  */
 
-int _isdigit(int c)
+mul(int a, int b)
 {
-	if ((c >= 48) && (c <= 57))
-	{
-		return (i);
-	}
-
-	return (0);
+	return (a * b);
 }
