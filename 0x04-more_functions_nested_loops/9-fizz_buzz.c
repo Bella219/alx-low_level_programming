@@ -1,8 +1,7 @@
 #include <stdio.h>
 
 /**
- * main - program that prints either number
- * or Fizz or Buzz or FizzBuzz
+ * main - check the code
  *
  * Return: return 0
  */
