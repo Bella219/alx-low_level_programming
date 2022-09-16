@@ -2,7 +2,7 @@
 
 /**
  * main - program that prints either number
- * or fizz or buzz or FizzBuzz
+ * or Fizz or Buzz or FizzBuzz
  *
  * Return: return 0
  */
