@@ -1,20 +1,25 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
- * main - check the code
- *
- * Return: Always 0.
+ * print_array - prints an inputted number  of elements of an array of integers
+ *@a: Array of integers
+ *@n: number of elements to be printed
  */
 
-int main(void)
+void print_array(int *a, int n)
 {
-	int array[5];
+	int index;
 
-	array[0] = 98;
-	array[1] = 402;
-	array[2] = -198;
-	array[3] = 298;
-	array[4] = -1024;
-	print_array(array, 5);
-	return (0);
+	for (index = 0; index < n; index++)
+	{
+		printf("%d", a[index]);
+
+		if (index == n - 1)
+			continue;
+
+		printf(", ");
+	}
+
+	printf("\n");
 }
