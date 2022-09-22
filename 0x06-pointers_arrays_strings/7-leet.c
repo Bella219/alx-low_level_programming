@@ -9,21 +9,18 @@
 
 char *leet(char *str)
 {
-	int indx1 = 0, indx2;
-	char leet[8] = {'O', 'L', '?', 'E', 'A', '?', '?', 'T'};
+	int a, b;
+	char *alpha = "aeotlAEOTL";
+	char *integer = "4307143071";
 
-	while (str[indx1])
+	for (a = 0; str[a] != '\0'; a++)
 	{
-		for (indx2 = 0; indx2 <= 7; indx2++)
-		{
-			if (str[indx1] == leet[indx2] ||
-			str[indx1] - 32 == leet[indx2])
-			str[indx1] = indx2 = '0';
-		}
-
-		indx1++;
-
+	for (b = 0; alpha[b] != '\0'; b++)
+	{
+	if (str[a] == alpha[b])
+	str[a] = integer[b];
 	}
 
+	}
 	return (str);
 }
