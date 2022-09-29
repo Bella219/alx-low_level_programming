@@ -7,7 +7,7 @@
  * Return: Always 0
  */
 
-int main(boid)
+int main(void)
 {
 	int r;
 
