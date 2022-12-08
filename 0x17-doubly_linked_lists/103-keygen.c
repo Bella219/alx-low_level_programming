@@ -21,19 +21,16 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 	password[0] = codex[tmp];
 
 	tmp = 0;
-
 	for (i = 0; i < len; i++)
 		tmp += argv[1][i];
 	password[1] = codex[(tmp ^ 79) & 63];
 
 	tmp = 1;
-
 	for (i = 0; i < len; i++)
 		tmp *= argv[1][i];
 	password[2] = codex[(tmp ^ 85) & 63];
 
 	tmp = 0;
-
 	for (i = 0; i < len; i++)
 	{
 		if (argv[1][i] > tmp)
@@ -44,7 +41,6 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 	password[3] = codex[rand() & 63];
 
 	tmp = 0;
-
 	for (i = 0; i < len; i++)
 		tmp += (argv[1][i] * argv[1][i]);
 	password[4] = codex[(tmp ^ 239) & 63];
