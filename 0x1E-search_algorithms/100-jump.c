@@ -1,47 +1,56 @@
 #include "search_algos.h"
+#include <math.h>
+
+size_t min(size_t a, size_t b);
 
 /**
- * jump_search - searches for a value in a sorted array of integers
-   using the Jump search algorithm
- * @array: given array to search in
- * @size: size of the array
- * @value: value to search for
- * Return: first index or -1
+ * min - returns the minimum of two size_t values
+ * @a: first value
+ * @b: second value
+ *
+ * Return: `a` if lower or equal to `b`, `b` otherwise
  */
+
+size_t min(size_t a, size_t b)
+{
+	return (a <= b ? a : b);
+}
+
+/**
+ * jump_search - searches for a value in a sorted array of integers using
+ * a jump search algorithm
+ * @array: pointer to first element of array to search
+ * @size: number of elements in array
+ * @value: value to search for
+ *
+ * Return: first index containing `value`, or -1 if `value` not found or
+ * `array` is NULL
+ */
+
 int jump_search(int *array, size_t size, int value)
 {
-	int jump = 0;
-	int i = 0;
-	int b = 0;
+	size_t low, high, jump;
 
-	if (array == NULL)
+	if (!array || size == 0)
 		return (-1);
+
 	jump = sqrt(size);
-	while (array[i] < value && i < (int) size)
+
+	for (high = 0; high < size && array[high] < value;
+	     low = high, high += jump)
 	{
-		b = i;
-		i = b + jump;
-		if (b < (int) size)
-			printf("Value checked array[%d] = [%d]\n", b, array[b]);
+		printf("Value checked array[%lu] = [%d]\n",
+		       high, array[high]);
 	}
 
-	if (b >= (int) size && array[size] != value)
-		b -= jump;
+	printf("Value found between indexes [%lu] and [%lu]\n", low, high);
 
-	printf("Value found between indexes [%d] and [%d]\n", b, b + jump);
-
-	while (array[b] < value)
+	for (; low <= min(high, size - 1); low++)
 	{
-		if (b >= (int) size)
-			break;
-		printf("Value checked array[%d] = [%d]\n", b, array[b]);
-		b += 1;
+		printf("Value checked array[%lu] = [%d]\n", low, array[low]);
+		if (array[low] == value)
+			return (low);
 	}
 
-	if (array[b] == value)
-	{
-		printf("Value checked array[%d] = [%d]\n", b, array[b]);
-		return (b);
-	}
 	return (-1);
 }
